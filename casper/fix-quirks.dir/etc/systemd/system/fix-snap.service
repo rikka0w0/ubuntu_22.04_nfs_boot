@@ -1,0 +1,11 @@
+[Unit]
+Description=Fix Snap Apparmor config
+After=local-fs.target
+Before=apparmor.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/fix-snap-apparmor.sh
+
+[Install]
+WantedBy=sysinit.target

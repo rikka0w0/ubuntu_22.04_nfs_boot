@@ -1,0 +1,14 @@
+.disk/
+EFI/
+boot.catalog
+boot/
+casper/vmlinuz
+casper/filesystem.squashfs*
+casper/initrd
+dists/
+md5sum.txt
+pool/
+preseed/
+ubuntu
+
+casper/fix-quirks.dir/etc/systemd/resolved.conf
