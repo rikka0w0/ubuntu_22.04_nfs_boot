@@ -35,3 +35,6 @@ Although the instance can obtain its IP address via DHCP during early boot stage
 
 # 2. Firefox does not work
 Since Ubuntu 22.04, Firefox is distributed through snap. Snap is not very compatible with NFS based file systems, its apparmor profile blocks NFS network communication, which causes access denied error. The most simple solution is to append `apparmor=0` to kernel args (see `kernel_extra_args` above). However, this may be insecure. An alternative solution is to fix those profiles before apparmor initializes, see [casper/fix-quirks.dir/usr/sbin/fix-snap-apparmor.sh](blob/main/casper/fix-quirks.dir/usr/sbin/fix-snap-apparmor.sh).
+
+# Note
+`nfs_sshd.tar.gz` contains another overlayfs layer which adds NFS client and SSH server, extract to `casper` folder to use. You need to generate the necessary files in `casper/nfs_sshd/etc/ssh`.

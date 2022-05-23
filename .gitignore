@@ -12,3 +12,5 @@ preseed/
 ubuntu
 
 casper/fix-quirks.dir/etc/systemd/resolved.conf
+casper/nfs_sshd.dir/
+casper/custom.dir/
