@@ -1,0 +1,10 @@
+[Unit]
+Description=Fix netplan and NetworkManager
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/fix-netplan.sh
+
+[Install]
+WantedBy=network-online.target
