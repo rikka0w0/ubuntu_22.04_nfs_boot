@@ -1,10 +1,12 @@
 [Unit]
 Description=Fix netplan and NetworkManager
-After=network.target
+After=NetworkManager.service
+#Requires=NetworkManager.service
+#Before=networkd-dispatcher.service ModemManager.service NetworkManager-wait-online.service systemd-logind.service nss-lookup.target wpa_supplicant.service snapd.hold.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/sbin/fix-netplan.sh
 
 [Install]
-WantedBy=network-online.target
+WantedBy=network.target
